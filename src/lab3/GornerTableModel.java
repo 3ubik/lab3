@@ -71,8 +71,8 @@ public class GornerTableModel  extends AbstractTableModel {
 		  }
 
 		  return true;
-		}
-	*/
+		}*/
+	
 	public Object getValueAt(int row, int col) {
 		
 		Double x=from+step*row;
@@ -89,8 +89,22 @@ public class GornerTableModel  extends AbstractTableModel {
         }            
         else if (col==1)
             return result1;
-       else if (col==2)
-            return true;
+       else if (col==2) {
+    	   		int integer=result1.intValue();
+    	   		String src=Integer.toString (integer);
+    	   		
+    	        src = src.replaceAll("[\\s]", "").toLowerCase();
+    	        boolean result = true;
+    	        for (int i = 0; i < src.length() / 2; i++) {
+    	            if (src.charAt(i) != src.charAt(src.length() - i - 1)) {
+    	                result = false;
+    	                break;
+    	            }
+    	        }
+    	        return result;
+    	    
+       }    	   
+            
 		return 0;
        
 		
