@@ -50,7 +50,7 @@ public class GornerTableModel  extends AbstractTableModel {
                 return "Значение многочлена при прямом порядке коэффицентов";
           
             default:
-                return "Целая часть палиндром?";
+                return "Целая часть значения многочлена палиндром?";
         }
     }
 	
